@@ -1,0 +1,13 @@
+id,question,expected_answer,source_document,source_section,answerable,tests
+Q01,How many casual leaves do I get per year?,12 days of Casual Leave per leave year.,leave-policy.md,Section 2,yes,Baseline - if this fails something is broken
+Q02,How many days off can I take for my sister's wedding?,"Casual Leave applies - it covers personal exigencies and family obligations. 12 days per year, maximum 3 consecutive days at a time.",leave-policy.md,Section 2,yes,SEMANTIC GAP - no word in the question appears in the policy
+Q03,Do unused casual leaves carry over to next year?,No. Casual Leave does not carry forward and is not encashable. Any unused balance lapses on 31 December.,leave-policy.md,Section 2,yes,Direct lookup
+Q04,When do I need a doctor's note for sick leave?,For any absence of 3 or more consecutive days a medical certificate from a registered practitioner is required.,leave-policy.md,Section 3,yes,"Wording gap - question says doctor's note, policy says medical certificate"
+Q05,How much earned leave can I accumulate?,A maximum of 45 days. Accrual stops once this ceiling is reached.,leave-policy.md,Section 4,yes,"TRAP - 18, 15 and 10 also appear in the same section"
+Q06,How long do I have to submit an expense claim?,30 days from the date the expense was incurred. Between 30 and 60 days requires a written explanation and department head approval. After 60 days it is not reimbursed.,expense-policy.md,Section 2,yes,Three-part answer - partial answers are common
+Q07,Can I claim my daily commute to the office?,No. Travel between home and the base office is not reimbursable under any circumstances.,expense-policy.md,Section 3,yes,Direct lookup
+Q08,What is the mileage rate if I drive my own car?,"Rs 14 per kilometre. A log of date, origin, destination and distance must accompany the claim.",expense-policy.md,Section 3,yes,TRAP - Rs 6 per km is the two-wheeler rate in the same bullet list
+Q09,What are the core working hours?,"11:00 to 17:00 IST on working days, irrespective of work location.",remote-work-policy.md,Section 2,yes,Direct lookup - tests cross-document retrieval
+Q10,What is the company policy on cryptocurrency investments?,NOT IN CORPUS - the assistant must decline.,,,no,REFUSAL - plausible but absent
+Q11,How many days of study leave am I entitled to?,NOT IN CORPUS - no study leave exists. The leave policy lists four other leave types.,,,no,"REFUSAL - strong trap, sits beside four real leave types"
+Q12,Can I bring my dog to the office?,NOT IN CORPUS - no pet policy exists.,,,no,REFUSAL - if this is answered you have no threshold at all
